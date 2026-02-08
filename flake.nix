@@ -29,7 +29,7 @@
       shellHook = ''
         echo "dev environment loaded"
         echo "`python --version`";
-        '';
+        ''; # should show python 3.13
     };
   };
 }
