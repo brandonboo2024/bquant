@@ -1,26 +1,26 @@
-import pandas as pd
-import numpy as np
-
-
-def add_sma(universe, window=50):
-    universe_clean = universe["Close"]
-    sma_50 = universe_clean.rolling(window).mean()
+# get SMA_50 for all stocks
+def get_sma(universe, window=50):
+    universe_close = universe["Close"]
+    sma_50 = universe_close.rolling(window).mean()
     return sma_50
 
 
-def liquidity_filter(universe):
-
-    return
-
-
-def trend_filter(universe):
-    sma_50 = add_sma(universe)
-    trending_stocks = universe[t]
-    return
+# get liquidity stats for stocks
+def get_liquidity(universe, window=50):
+    volume = universe["Volume"]
+    vol_50 = volume.rolling(window).mean()
+    return vol_50
 
 
+# returns a dataframe with boolean values on whether a stock passes the screening on each day
 def get_candidates(universe):
-    return
+    sma_50 = get_sma(universe)
+    vol_50 = get_liquidity(universe)
+    # do screening
+    candidates = (
+        (universe["Close"] >= 3.0) & (vol_50 >= 300000) & (universe["Close"] > sma_50)
+    )
+    return candidates
 
 
 if __name__ == "__main__":
