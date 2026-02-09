@@ -24,6 +24,7 @@
           python313Packages.matplotlib
           python313Packages.yfinance
           python313Packages.scipy
+          python313Packages.jupyter
       ];
 
       shellHook = ''
