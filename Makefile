@@ -2,7 +2,7 @@ components = momentum/data.py momentum/executor.py momentum/screener.py momentum
 
 
 main : $(components)
-	python3 main.py
+	uv run main.py
 
 clean : 
 	rm -r momentum/__pycache__
