@@ -15,8 +15,8 @@ def main():
     signals, breakout_level = generate_signals(candidates, stocks)
     events = to_trade_events(signals, breakout_level)
     print(events)
-    trade = execute(signals)
-    print(trade)
+    trade = execute(stocks, signals)
+    # print(trade)
 
 
 main()
