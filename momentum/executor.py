@@ -48,8 +48,6 @@ def execute(universe, signals_bool, capital=100_000.0, risk=0.02):
 
     atr = get_atr(universe)
     sma10 = get_sma(universe)
-    print("printing atr")
-    print(atr)
 
     risk_amt = capital * risk
 
