@@ -14,8 +14,10 @@ def main():
     # print(candidates)
     signals, breakout_level = generate_signals(candidates, stocks)
     events = to_trade_events(signals, breakout_level)
-    print(events)
+    print(events.head(10))
     trade = execute(stocks, signals)
+    print(trade.head(10))
+    print("Total PnL:", trade["pnl"].sum())
     # print(trade)
 
 
