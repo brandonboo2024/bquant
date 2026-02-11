@@ -13,13 +13,19 @@ def main():
     events = to_trade_events(signals, breakout_level)
     trade = execute(stocks, signals)
 
+    print("========== Events =============")
     print(events.head(10))
+    print()
+
+    print("========== Trades =============")
     print(trade.head(10))
-    print("Total PnL:", trade["pnl"].sum())
+    print()
+
+    print("========== PnL =============")
+    print(f"Total PnL: {trade["pnl"].sum():.2f}")
 
     # csv outputs
     out_dir = Path("outputs")
-    print(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     events.to_csv(out_dir / "events.csv", index=False)
     events.to_csv(out_dir / "trades.csv", index=False)

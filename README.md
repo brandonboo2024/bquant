@@ -13,6 +13,7 @@ The goal is to find stocks that:
 3) then break above the prior peak (**Breakout**).
 
 ## Project Structure
+```
 ├── flake.lock
 ├── flake.nix
 ├── LICENSE
@@ -26,6 +27,7 @@ The goal is to find stocks that:
 ├── pyproject.toml
 ├── README.md
 └── uv.lock
+```
 
 **Core Components**:
 - `data.py` — loads historical OHLCV data for a fixed universe of 20 US large caps using `yfinance`.
@@ -90,7 +92,7 @@ make
 uv run python main.py
 ```
 
-### manual
+### Manual
 ```
 python3 main.py
 ```
